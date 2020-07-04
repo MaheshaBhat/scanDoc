@@ -39,7 +39,7 @@ export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeNa
       <Stack.Navigator 
       screenOptions={{ 
         headerShown: true, 
-        headerTitle: 'ScanDoc', 
+        headerTitle: 'scandoc', 
         headerLeft: ()=><HeaderLeft />,
       }}
         >
