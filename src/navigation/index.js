@@ -8,7 +8,7 @@ import { DrawerActions, useNavigation } from '@react-navigation/native';
 import { createDrawerNavigator, DrawerContentScrollView, DrawerItem } from '@react-navigation/drawer';
 import * as React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
-import Icon from 'react-native-ionicons';
+import Icon from 'react-native-vector-icons/FontAwesome';
 import NotFoundScreen from '../screens/NotFoundScreen';
 import TopTabNavigator from './TopTabNavigator';
 //import LinkingConfiguration from './LinkingConfiguration';
@@ -35,7 +35,7 @@ const HeaderLeft = () => {
         onPress={() => {
           navigation.dispatch(DrawerActions.toggleDrawer());
         }}>
-        <Icon name='menu' color='#000' size={30} />
+        <Icon name='rocket' color='#000' size={30} />
       </TouchableOpacity>
     </View>
   );

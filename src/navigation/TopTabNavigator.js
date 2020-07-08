@@ -7,7 +7,7 @@ import Colors from '../constants/Colors';
 import TabOneScreen from '../screens/TabOneScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
 import TabThreeScreen from '../screens/TabThreeScreen';
-
+import ImagePreview from '../screens/ImagePreview';
 
 const BottomTab = createMaterialTopTabNavigator();
 
@@ -20,7 +20,7 @@ export default function BottomTabNavigator() {
       tabBarOptions={{activeTintColor: 'blue'}}>
       <BottomTab.Screen
         name="Camera"
-        component={TabOneScreen}
+        component={TabOneNavigator}
         options={{
           tabBarIcon: ({color}) => <Text>TabOne</Text>,
         }}
@@ -32,7 +32,7 @@ export default function BottomTabNavigator() {
           tabBarIcon: ({color}) => <Text>TabTwo</Text>,
         }}
       />
-       <BottomTab.Screen
+      <BottomTab.Screen
         name="Shared"
         component={TabThreeScreen}
         options={{
@@ -51,19 +51,24 @@ export default function BottomTabNavigator() {
 
 // Each tab has its own navigation stack, you can read more about this pattern here:
 // https://reactnavigation.org/docs/tab-based-navigation#a-stack-navigator-for-each-tab
-// const TabOneStack = createStackNavigator();
+const TabOneStack = createStackNavigator();
 
-// function TabOneNavigator() {
-//   return (
-//     <TabOneStack.Navigator>
-//       <TabOneStack.Screen
-//         name="TabOneScreen"
-//         component={TabOneScreen}
-//         options={{headerTitle: 'Tab One Title'}}
-//       />
-//     </TabOneStack.Navigator>
-//   );
-// }
+function TabOneNavigator() {
+  return (
+    <TabOneStack.Navigator>
+      <TabOneStack.Screen
+        name="TabOneScreen"
+        component={TabOneScreen}
+        options={{headerShown: false}}
+      />
+      <TabOneStack.Screen
+        name="preview"
+        component={ImagePreview}
+        options={{headerShown: false}}
+      />
+    </TabOneStack.Navigator>
+  );
+}
 
 // const TabTwoStack = createStackNavigator();
 
