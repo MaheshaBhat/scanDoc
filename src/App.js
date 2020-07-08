@@ -11,15 +11,18 @@ import {
   SafeAreaView,
   //StyleSheet,
   ScrollView,
-  //View,
-  //Text,
+  View,
+  Text,
   StatusBar,
 } from 'react-native';
-// import Navigation from './navigation';
+import {createStackNavigator} from '@react-navigation/stack';
+import {NavigationContainer} from '@react-navigation/native';
+import Navigation from './navigation';
 // import useCachedResources from './hooks/useCachedResources';
 import useColorScheme from './hooks/useColorScheme';
-import {NavigationContainer} from '@react-navigation/native';
-import NavigationComp from './components/Navigation';
+
+
+
 // import {
 //   Header,
 //   LearnMoreLinks,
@@ -27,7 +30,22 @@ import NavigationComp from './components/Navigation';
 //   DebugInstructions,
 //   ReloadInstructions,
 // } from 'react-native/Libraries/NewAppScreen';
+function HomeScreen() {
+  return (
+    <View 
+    style={{
+        height: '100%',
+        width: '100%',
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: 'red',
+      }}>
+      <Text>Home Screen</Text>
+    </View>
+  );
+}
 
+const Stack = createStackNavigator();
 export default () => {
   // const isLoadingComplete = useCachedResources();
   const colorScheme = useColorScheme();
@@ -36,17 +54,14 @@ export default () => {
   //   return null;
   // } else {
   return (
-    <>
-      <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={{height: '100%', width: '100%', backgroundColor: 'wheat'}}>
-          {/* <StatusBar /> */}
-          <NavigationContainer>
-            <NavigationComp />
-          </NavigationContainer>
-        </ScrollView>
-      </SafeAreaView>
-    </>
+    <SafeAreaView>
+      <ScrollView
+        contentInsetAdjustmentBehavior="automatic"
+        contentContainerStyle={{ flex:1 }}
+        style={{height: '100%', width: '100%', backgroundColor: 'white'}}>
+        {/* <StatusBar /> */}
+        <Navigation colorScheme={colorScheme} />
+      </ScrollView>
+    </SafeAreaView>
   );
 };
