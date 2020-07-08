@@ -5,6 +5,7 @@
  * @format
  * @flow strict-local
  */
+import 'react-native-gesture-handler';
 import React from 'react';
 import {
   SafeAreaView,
@@ -14,9 +15,11 @@ import {
   //Text,
   StatusBar,
 } from 'react-native';
-import Navigation from './navigation';
+// import Navigation from './navigation';
 // import useCachedResources from './hooks/useCachedResources';
 import useColorScheme from './hooks/useColorScheme';
+import {NavigationContainer} from '@react-navigation/native';
+import NavigationComp from './components/Navigation';
 // import {
 //   Header,
 //   LearnMoreLinks,
@@ -38,10 +41,10 @@ export default () => {
         <ScrollView
           contentInsetAdjustmentBehavior="automatic"
           style={{height: '100%', width: '100%', backgroundColor: 'wheat'}}>
-          <StatusBar />
-          <Navigation 
-           colorScheme={colorScheme} 
-          />
+          {/* <StatusBar /> */}
+          <NavigationContainer>
+            <NavigationComp />
+          </NavigationContainer>
         </ScrollView>
       </SafeAreaView>
     </>
