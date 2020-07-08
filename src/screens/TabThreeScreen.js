@@ -4,7 +4,7 @@ import {StyleSheet, Text, View} from 'react-native';
 export default function TabTwoScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Documents</Text>
+      <Text style={styles.title}>Shared</Text>
       <View
         style={styles.separator}
         lightColor="#eee"
