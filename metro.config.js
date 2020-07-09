@@ -10,8 +10,11 @@ module.exports = {
     getTransformOptions: async () => ({
       transform: {
         experimentalImportSupport: false,
-        inlineRequires: false,
-      },
-    }),
+        inlineRequires: false
+      }
+    })
   },
+  resolver: {
+    sourceExts: ['jsx', 'native', 'js', 'json', 'ts', 'tsx']
+  }
 };

@@ -1,8 +1,8 @@
-import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
-import {createStackNavigator} from '@react-navigation/stack';
-import * as React from 'react';
-import {Text} from 'react-native';
-import Colors from '../constants/Colors';
+import React from 'react';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import { createStackNavigator } from '@react-navigation/stack';
+import { Text } from 'react-native';
+// import Colors from '../constants/Colors';
 // import useColorScheme from '../hooks/useColorScheme';
 import TabOneScreen from '../screens/TabOneScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
@@ -17,26 +17,27 @@ export default function BottomTabNavigator() {
   return (
     <BottomTab.Navigator
       initialRouteName="Documents"
-      tabBarOptions={{activeTintColor: 'blue'}}>
+      tabBarOptions={{ activeTintColor: 'blue' }}
+    >
       <BottomTab.Screen
         name="Camera"
         component={TabOneNavigator}
         options={{
-          tabBarIcon: ({color}) => <Text>TabOne</Text>,
+          tabBarIcon: () => <Text>TabOne</Text>
         }}
       />
       <BottomTab.Screen
         name="Documents"
         component={TabTwoScreen}
         options={{
-          tabBarIcon: ({color}) => <Text>TabTwo</Text>,
+          tabBarIcon: () => <Text>TabTwo</Text>
         }}
       />
       <BottomTab.Screen
         name="Shared"
         component={TabThreeScreen}
         options={{
-          tabBarIcon: ({color}) => <Text>TabTwo</Text>,
+          tabBarIcon: () => <Text>TabTwo</Text>
         }}
       />
     </BottomTab.Navigator>
@@ -59,12 +60,12 @@ function TabOneNavigator() {
       <TabOneStack.Screen
         name="TabOneScreen"
         component={TabOneScreen}
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
       />
       <TabOneStack.Screen
         name="preview"
         component={ImagePreview}
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
       />
     </TabOneStack.Navigator>
   );
