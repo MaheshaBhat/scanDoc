@@ -20,7 +20,7 @@ export default ({navigation}) => {
         ref={cameraRef}
         style={styles.preview}
         type={RNCamera.Constants.Type.back}
-        flashMode={RNCamera.Constants.FlashMode.on}
+        flashMode={RNCamera.Constants.FlashMode.off}
         androidCameraPermissionOptions={{
           title: 'Permission to use camera',
           message: 'We need your permission to use your camera',
@@ -39,6 +39,9 @@ export default ({navigation}) => {
         captureAudio={false}
       />
       <View style={{flex: 0, flexDirection: 'row', justifyContent: 'center'}}>
+      {/* <TouchableOpacity onPress={takePicture} style={styles.capture}>
+          <Icon name={'flash'}/>
+        </TouchableOpacity> */}
         <TouchableOpacity onPress={takePicture} style={styles.capture}>
           <Text style={{fontSize: 12}}> CAPTURE </Text>
         </TouchableOpacity>
